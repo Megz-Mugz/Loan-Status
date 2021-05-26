@@ -81,23 +81,6 @@ def logistic_regression():
     print('Classification Report: \n', classification_report(y_test, predctions))
     print('Confusion Matrix: \n', confusion_matrix(y_test, predctions))
 
-def nearest_neighbors():
-    knn = KNeighborsClassifier()
-
-    X = df.drop('Loan_Status', axis=1)
-    y = df['Loan_Status']
-
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
-
-    knn.fit(X_train, y_train)
-
-    pred = knn.predict(X_test)
-
-    print('----------- K Nearest Neighbors -----------')
-    print('Classification Report: \n',classification_report(y_test, pred))
-    print('Confusion Matrix: \n',confusion_matrix(y_test, pred))
-
 
 clean_data()
 logistic_regression()
-nearest_neighbors()
